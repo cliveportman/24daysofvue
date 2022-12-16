@@ -3,7 +3,7 @@ import Board from './components/Board.vue'
 </script>
 
 <template>
-  <main class="mx-auto">
+  <div>
     <Board />
-  </main>
+  </div>
 </template>
