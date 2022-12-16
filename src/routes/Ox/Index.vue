@@ -1,5 +1,9 @@
-<script lang="ts" setup></script>
+<script setup lang="ts">
+import Board from './components/Board.vue'
+</script>
 
 <template>
-  <h1>OX page</h1>
+  <main class="mx-auto">
+    <Board />
+  </main>
 </template>
