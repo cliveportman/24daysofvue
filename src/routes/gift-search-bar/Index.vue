@@ -19,12 +19,15 @@ watch(searchTerm, (term) => {
 
 <template>
   <div class="w-full h-full flex flex-col gap-5 justify-start items-center">
-    <input
-      type="text"
-      class="sm:w-96 p-3 bg-yellow-200 text-teal-900 font-medium text-center"
-      v-model="searchTerm"
-      placeholder="Start typing..."
-    />
+    <label class="text-yellow-200"
+      >Search for a product:
+      <input
+        type="text"
+        class="block sm:w-96 p-3 mt-2 border-yellow-200 border bg-transparent text-yellow-200 placeholder:text-yellow-200 placeholder:text-opacity-25 font-medium text-center"
+        v-model="searchTerm"
+        placeholder="e.g. 'phone'"
+      />
+    </label>
     <ul v-if="products.length" class="grid grid-cols-2 gap-4 sm:w-96">
       <li v-for="product in products" class="relative">
         <img
