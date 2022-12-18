@@ -1,0 +1,42 @@
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+let ready:boolean = false
+
+const joke: {} = ref(
+  { setup: ''}
+)
+const showAnswer = ref(false)
+
+const getJoke = async () => {
+  fetch('https://v2.jokeapi.dev/joke/christmas')
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json)
+      joke.value = json
+      ready = true
+      showAnswer.value = false
+    })
+
+  
+}
+
+onMounted( () => {
+  getJoke()
+})
+
+</script>
+
+<template>
+  <div class="w-full h-full flex flex-col justify-center items-center">
+    
+      <h3 class="text-4xl font-bold text-yellow-200">Q: "{{ joke.setup }}"</h3>
+
+      <p class="max-w-prose px-4 text-3xl font-bold text-yellow-200" v-if="showAnswer">A: "{{ joke.delivery }}"</p>
+
+      <button class="mt-8 bg-yellow-200 hover:opacity-50 p-4 text-teal-900 text-lg font-medium" v-if="!showAnswer" type="button" @click="showAnswer = true">Show the answer</button>
+
+      <button class="mt-8 bg-yellow-200 hover:opacity-50 p-4 text-teal-900 text-lg font-medium" v-if="showAnswer" type="button" @click="getJoke">Get a new joke</button>
+    
+  </div>
+</template>

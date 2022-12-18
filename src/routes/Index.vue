@@ -1,16 +1,21 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+
+const links = [
+  { href: 'noughts-crosses', title: 'Noughts & Crosses' },
+  { href: 'gift-search-bar', title: 'Gift Search Bar' },
+  { href: 'jokes', title: 'Jokes' },
+]
+
+</script>
 
 <template>
   <div class="flex flex-col items-center justify-center">
-    <router-link
-      to="noughts-crosses"
+  
+    <router-link v-for="link, index in links"
+      :to="link.href"
       class="block text-3xl p-2 font-medium text-yellow-200 hover:opacity-50"
-      >Noughts & Crosses</router-link
+      >{{ link.title }}</router-link
     >
-    <router-link
-      to="gift-search-bar"
-      class="block text-3xl p-2 font-medium text-yellow-200 hover:opacity-50"
-      >Gift Search Bar</router-link
-    >
+    
   </div>
 </template>
