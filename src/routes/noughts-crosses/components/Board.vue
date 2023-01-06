@@ -16,10 +16,10 @@ const lines = [
 
 const emptyState = {
   board: ['', '', '', '', '', '', '', '', ''],
-  scoreX: [],
-  scoreO: [],
-  win: [],
-  playable: true,
+  scoreX: [] as number[],
+  scoreO: [] as number[],
+  win: [] as number[],
+  playable: true as boolean,
 }
 
 const turnX = ref(true)
@@ -45,7 +45,7 @@ const handleSelect = (index: number) => {
   turnX.value = !turnX.value
 }
 
-const checkForWin = (scores) => {
+const checkForWin = (scores: number[]) => {
   const index = lines.findIndex((line) => line.every((item) => scores.includes(item)))
   if (index !== -1) {
     state.value.win = lines[index]

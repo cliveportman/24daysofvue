@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import type { Ref } from 'vue'
 
 let ready: boolean = false
 
-const joke: {} = ref({ setup: '' })
+const joke: Ref<{ setup: string; delivery?: string }> = ref({ setup: '' })
 const showAnswer = ref(false)
 
 const getJoke = async () => {
   fetch('https://v2.jokeapi.dev/joke/Any')
     .then((res) => res.json())
     .then((json) => {
-      console.log(json)
       joke.value = json
       ready = true
       showAnswer.value = false

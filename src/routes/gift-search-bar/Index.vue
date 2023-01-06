@@ -1,9 +1,10 @@
-<script setup>
+<script lang="ts" setup>
 import { ref, watch } from 'vue'
+import type { Ref } from 'vue'
 import { debounce } from 'debounce'
 const searchTerm = ref('')
-const products = ref([])
-const findProducts = debounce(async (term) => {
+const products: Ref<{ thumbnail: string; title: string; price: string; stock: number }[]> = ref([])
+const findProducts = debounce(async (term: string) => {
   fetch('https://dummyjson.com/products/search?q=' + term)
     .then((res) => res.json())
     .then((json) => {
