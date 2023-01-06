@@ -6,6 +6,7 @@ import Noughts from '@/routes/noughts-crosses/Index.vue'
 import GiftSearchBar from '@/routes/gift-search-bar/Index.vue'
 import Jokes from '@/routes/jokes/Index.vue'
 import Countdown from '@/routes/countdown/Index.vue'
+import Tree from '@/routes/tree/Index.vue'
 
 export const routes = [
   { path: '/', name: '', component: Home, meta: { layout: 'home' } },
@@ -13,6 +14,7 @@ export const routes = [
   { path: '/gift-search-bar', name: 'Gift Search Bar', component: GiftSearchBar },
   { path: '/jokes', name: 'Jokes', component: Jokes },
   { path: '/countdown', name: 'Countdown', component: Countdown },
+  { path: '/tree', name: 'Recursive tree', component: Tree },
 ]
 
 export default createRouter({
