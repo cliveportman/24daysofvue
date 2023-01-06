@@ -8,12 +8,15 @@ const joke: Ref<{ setup: string; delivery?: string }> = ref({ setup: '' })
 const showAnswer = ref(false)
 
 const getJoke = async () => {
-  fetch('https://v2.jokeapi.dev/joke/Any')
+  fetch('https://v2.jokeapi.dev/joke/Programming')
     .then((res) => res.json())
     .then((json) => {
-      joke.value = json
-      ready = true
-      showAnswer.value = false
+      if (!json.setup) getJoke()
+      else {
+        joke.value = json
+        ready = true
+        showAnswer.value = false
+      }
     })
 }
 
