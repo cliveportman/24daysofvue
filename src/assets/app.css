@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components{
+  .button-colours {
+    @apply bg-yellow-100 bg-opacity-20 text-yellow-200 hover:bg-opacity-10;
+  }
+}

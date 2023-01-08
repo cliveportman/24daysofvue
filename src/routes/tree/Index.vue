@@ -17,14 +17,14 @@ const createArray = (n: number) => {
 
 <template>
   <div class="absolute right-2 top-2 flex justify-center">
-    <button type="button" @click="rows--" class="block w-12 h-12 bg-yellow-100 bg-opacity-20">
+    <button type="button" @click="rows--" class="block w-12 h-12 button-colours">
       <div class="flex w-12 h-12 justify-center items-center">
-        <ArrowDownIcon class="h-6 w-6 text-yellow-200" />
+        <ArrowDownIcon class="h-6 w-6" />
       </div>
     </button>
-    <button type="button" @click="rows++" class="ml-1 block w-12 h-12 bg-yellow-100 bg-opacity-20">
+    <button type="button" @click="rows++" class="ml-1 block w-12 h-12 button-colours">
       <div class="flex w-12 h-12 justify-center items-center">
-        <ArrowDownIcon class="h-6 w-6 text-yellow-200 rotate-180" />
+        <ArrowDownIcon class="h-6 w-6 rotate-180" />
       </div>
     </button>
   </div>
